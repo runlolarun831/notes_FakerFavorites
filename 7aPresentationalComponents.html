@@ -1,0 +1,36 @@
+ReactDOM.render(React.createElement(App), root);<!--React  make a function that does all the previous stuff
+  create reusablity
+  creates something that will be part of the UI
+  we can create reusable and manageable code.
+  -->
+  <html>
+    <head>
+  <style>
+  </style>
+      <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    </head>
+    <body>
+      <div id='root'></div>
+      <script>
+        const root = document.querySelector('#root');
+
+        // this function is called a presentational component because the only
+        //  thing it does is return a React element
+        const App = ()=> {
+          const colors = ['red', 'blue', 'green', 'yellow', 'pink'];
+          const lis = colors.map( color => React.createElement(
+            'li',
+            { key: color, style:{ color } },
+            color
+          ));
+          const app = React.createElement('ul', null, lis);
+          return app;
+        };
+        const div = React.createElement('div', null, React.creatElement(App),React.createElem(App));
+
+        ReactDOM.render(React.createElement(App), root);
+
+      </script>
+    </body>
+  </html>

@@ -1,0 +1,36 @@
+<html>
+  <head>
+<style>
+  .red {
+    border: solid 1px red;
+  }
+  .blue {
+    border: solid 1px blue;
+  }
+  .green {
+    border: solid 1px green;
+  }
+</style>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script>
+      const root = document.querySelector('#root');
+      const redHR = React.createElement('hr', { className: 'red'});
+      const blueHR = React.createElement('hr', { className: 'blue'});
+      const greenHR = React.createElement('hr', { className: 'green'});
+      //ReactDOM.render(blueHR, root);
+      //ReactDOM.render(blueHR, redHR, root); // won't work so...beacause 2nd param. takes the root
+      //so make a <div>...1st-element you created, 2nd are the properties, 3rd the children
+      // const app = React.createElement('div', null, redHR, blueHR);
+      //                             // ^^^^1st is a <div>, 2nd no properties,
+      //                             // but I want the children of <div> to be redHR and blueHR
+      //  if you need more than 1 elem. you need to put inside of another conatiner,
+      // always needs a starting pnt.,because it is a tree-like structure
+      const app = React.createElement('div', null, redHR, blueHR, greenHR);
+        ReactDOM.render(app, root);
+    </script>
+  </body>
+</html>

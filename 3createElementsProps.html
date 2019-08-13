@@ -1,0 +1,26 @@
+<!-- React knows DOM tags,
+  props is a short for "properties" and refers to data with want to attach to our
+  DOM element. We can pass in our props using the React.createElement() method.
+  Props are allow us to pass attributes to the our React.createElement.
+  In React syntax, className is used to reference CSS classes. In our props object, we use the key className
+  2nd argument {} as argument Props are properties that
+don't use CAPS in tags -->
+<html>
+  <head>
+<style>
+  .red {
+    border: solid 1px red;
+  }
+</style>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script>
+      const root = document.querySelector('#root');
+      ReactDOM.render(React.createElement('hr', {className, 'red'}), root);
+      //React class is reserved word
+    </script>
+  </body>
+</html>

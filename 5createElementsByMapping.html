@@ -1,0 +1,43 @@
+<!--React is very good at creating  lists / collections
+by mapping over something  -->
+<html>
+  <head>
+<style>
+  .red {
+    border: solid 1px red;
+  }
+  .blue {
+    border: solid 1px blue;
+  }
+  .green {
+    border: solid 1px green;
+  }
+</style>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script>
+      const root = document.querySelector('#root');
+      const colors = ['red', 'blue', 'green'];
+      //const hrs = colors.map( color => React.createElement('hr', { className: color}));//need to fix due to console warning below
+      const hrs = colors.map( color => React.createElement('hr', { key: color, className: color}));
+      // VVVV try to DRY out the code below  VVVV
+      /*
+      const redHR = React.createElement('hr', { className: 'red'});
+      const blueHR = React.createElement('hr', { className: 'blue'});
+      const greenHR = React.createElement('hr', { className: 'green'});
+      */
+
+      // const app = React.createElement('div', null, redHR, blueHR, greenHR);
+      // // we will pass colorHrs as a collection     ^^^^^^^^^^^^^^^^^^^^^^^
+
+      // const app = React.createElement('div', null, hrs);
+      // // works the same way as above but get console:Warning: Each child in a list should have a unique "key" prop.
+
+      const app = React.createElement('div', null, hrs);
+      ReactDOM.render(app, root);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!--React -->
+<html>
+  <head>
+<style>
+</style>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script>
+      const root = document.querySelector('#root');
+
+      const App = ()=> {
+        const removeColor = (ev)=> {
+          //console.log(ev.target);//to check
+          const idx = [...ev.target.parentNode.children].indexOf(ev.target);
+          console.log(idx);
+          colors.splice(idx, 1);
+          console.log(colors);
+          // using destructive .splice() changes colors
+          // but not changing state of component on page
+        };
+        const colors = ['red', 'blue', 'green', 'yellow', 'pink'];
+        const lis = colors.map( color => React.createElement(
+          'li',
+          { key: color, style:{ color }, onClick: removeColor },
+          color
+        ));
+        const app = React.createElement('ul', null, lis);
+        return app;
+      };
+
+      ReactDOM.render(React.createElement(App), root);
+    </script>
+  </body>
+</html>

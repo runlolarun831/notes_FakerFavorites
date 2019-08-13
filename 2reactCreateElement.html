@@ -1,0 +1,20 @@
+<!-- Need ReactDOM to create something
+  make a <div> because React needs a place to mount to.
+  React calls native DOM methods
+manages the DOM, know how-->
+<html>
+  <head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script>
+      const root = document.querySelector('#root');
+      // we use React to create an element - a simple hr tag will suffice
+      ReactDOM.render(React.createElement('hr'), root);// use lowercase letters for tags
+      // ReactDOM is a simple library used for one purpose - attach React code to our DOM
+      console.log(root);
+    </script>
+  </body>
+</html>
